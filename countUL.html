@@ -68,6 +68,7 @@
         var textarea = $('#textarea').val();
         var typee = $('#type').val();
         const pattern_uppercase = /^[A-Z]/;
+        const pattern_lowercase = /^[a-z]/;
         if(typee == 0){
             var to_html = "";
             var number = 0;
@@ -85,6 +86,23 @@
             }
             $('#result').html(to_html);
             alert("Count of Uppercase : " + number);
+        }else if(typee == 1){
+          var to_html = "";
+            var number = 0;
+            var exploding = textarea.split(" ");
+            var length_of_explode = exploding.length;
+            for(var i = 0;i < length_of_explode;i++){
+                for(var j = 0;j < exploding[i].length;j++){
+                    if(pattern_lowercase.test(exploding[i][j])){
+                        to_html += "<p class='text-success fw-bold'>"+exploding[i][j]+"</p>";
+                        number++;
+                    }else{
+                        to_html += "<p>"+ exploding[i][j] +"</p>";
+                    }
+                }
+            }
+            $('#result').html(to_html);
+            alert("Count of Lowercase : " + number);
         }
     })
 
