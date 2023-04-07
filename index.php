@@ -25,6 +25,9 @@
           <li class="nav-item">
             <a class="nav-link" href="reversed.html">Reversed String</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="music.html">Music</a>
+          </li>
         </ul>
       </div>
     </div>
