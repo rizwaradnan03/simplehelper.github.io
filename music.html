@@ -63,6 +63,26 @@
                 </div>
             </div>
         </div>
+        <div class="card flex-wrap col" style="width: 25%;">
+            <div class="card-body">
+                <h3 class="card-title text-wrap text-center">Don't Stop Me Now (Queen)</h3>
+                <div class="music2">
+                    <a href="#" class="btn btn-primary form-control" id="play4">Play</a>
+                    <a href="#" class="btn btn-secondary form-control" id="pause4">Stop</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+      <div class="card flex-wrap col" style="width: 25%;">
+        <div class="card-body">
+            <h3 class="card-title text-wrap text-center">Bohemian Rhapsody (Queen)</h3>
+            <div class="music2">
+                <a href="#" class="btn btn-primary form-control" id="play5">Play</a>
+                <a href="#" class="btn btn-secondary form-control" id="pause5">Stop</a>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 </body>
@@ -73,6 +93,8 @@
     $('#pause1').css("visibility","hidden");
     $('#pause2').css("visibility","hidden");
     $('#pause3').css("visibility","hidden");
+    $('#pause4').css("visibility","hidden");
+    $('#pause5').css("visibility","hidden");
 
     $('#play1').on("click", function(){
         var audio = new Audio('music/livin_on_a_prayer.mp3');
@@ -82,9 +104,11 @@
         $('#pause1').css("visibility","")
         $('#play2').css("visibility","hidden")
         $('#play3').css("visibility","hidden")
-        audio.onended(function(){
-            location.reload();
-        })
+        $('#play4').css("visibility","hidden")
+        $('#play5').css("visibility","hidden")
+        audio.onended = function () {
+          location.reload();  
+        }
         $('#pause1').on("click", function(){
             location.reload();
         })
@@ -97,6 +121,11 @@
         $('#pause2').css("visibility","")
         $('#play1').css("visibility","hidden")
         $('#play3').css("visibility","hidden")
+        $('#play4').css("visibility","hidden")
+        $('#play5').css("visibility","hidden")
+        audio.onended = function () {
+          location.reload();  
+        }
         $('#pause2').on("click", function(){
             location.reload();
         })
@@ -109,7 +138,46 @@
         $('#pause3').css("visibility","")
         $('#play1').css("visibility","hidden")
         $('#play2').css("visibility","hidden")
+        $('#play4').css("visibility","hidden")
+        $('#play5').css("visibility","hidden")
+        audio.onended = function () {
+          location.reload();  
+        }
         $('#pause3').on("click", function(){
+            location.reload();
+        })
+    })
+    $('#play4').on("click", function(){
+        var audio = new Audio('music/dont_stop_me_now.mp3');
+        audio.play();
+        audio.volume = 0.3;
+        $(this).remove();
+        $('#pause4').css("visibility","")
+        $('#play1').css("visibility","hidden")
+        $('#play2').css("visibility","hidden")
+        $('#play3').css("visibility","hidden")
+        $('#play5').css("visibility","hidden")
+        audio.onended = function () {
+          location.reload();  
+        }
+        $('#pause4').on("click", function(){
+            location.reload();
+        })
+    })
+    $('#play5').on("click", function(){
+        var audio = new Audio('music/bohemian_rhapsody.mp3');
+        audio.play();
+        audio.volume = 0.3;
+        $(this).remove();
+        $('#pause5').css("visibility","")
+        $('#play1').css("visibility","hidden")
+        $('#play2').css("visibility","hidden")
+        $('#play3').css("visibility","hidden")
+        $('#play4').css("visibility","hidden")
+        audio.onended = function () {
+          location.reload();  
+        }
+        $('#pause5').on("click", function(){
             location.reload();
         })
     })
