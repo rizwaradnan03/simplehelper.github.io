@@ -54,6 +54,15 @@
                 </div>
             </div>
         </div>
+        <div class="card flex-wrap col" style="width: 25%;">
+            <div class="card-body">
+                <h3 class="card-title text-wrap text-center">It's Not Living "If It's Not With You" (The 1975)</h3>
+                <div class="music2">
+                    <a href="#" class="btn btn-primary form-control" id="play3">Play</a>
+                    <a href="#" class="btn btn-secondary form-control" id="pause3">Stop</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
@@ -63,6 +72,7 @@
 <script>
     $('#pause1').css("visibility","hidden");
     $('#pause2').css("visibility","hidden");
+    $('#pause3').css("visibility","hidden");
 
     $('#play1').on("click", function(){
         var audio = new Audio('music/livin_on_a_prayer.mp3');
@@ -71,6 +81,10 @@
         $(this).remove();
         $('#pause1').css("visibility","")
         $('#play2').css("visibility","hidden")
+        $('#play3').css("visibility","hidden")
+        audio.onended(function(){
+            location.reload();
+        })
         $('#pause1').on("click", function(){
             location.reload();
         })
@@ -82,7 +96,20 @@
         $(this).remove();
         $('#pause2').css("visibility","")
         $('#play1').css("visibility","hidden")
+        $('#play3').css("visibility","hidden")
         $('#pause2').on("click", function(){
+            location.reload();
+        })
+    })
+    $('#play3').on("click", function(){
+        var audio = new Audio('music/its_not_living.mp3');
+        audio.play();
+        audio.volume = 0.3;
+        $(this).remove();
+        $('#pause3').css("visibility","")
+        $('#play1').css("visibility","hidden")
+        $('#play2').css("visibility","hidden")
+        $('#pause3').on("click", function(){
             location.reload();
         })
     })
