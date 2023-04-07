@@ -43,7 +43,7 @@
               <div class="textarea_div">
 
               </div>
-              <button type='button' class='btn btn-primary' id='submit_btn'>Submit</button>
+              <button type='button' class='btn btn-primary form-control' id='submit_btn'>Submit</button>
             </div>
           </div>
       </div>
@@ -55,6 +55,7 @@
     $('#type').on("change", function(){
         $('#submit_btn').css("visibility","")
         var textarea_div = "";
+        textarea_div += "<label for=''>Input The String</label>";
         textarea_div += "<textarea id='textarea' class='form-control mb-2' cols='100%' rows='5'></textarea>";
         textarea_div += "<p>Result : </p>";
         textarea_div += "<div id='result'></div>";
